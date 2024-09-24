@@ -19,3 +19,16 @@ export const saveToLocalStorage = (value) => {
   complementaryArray.push(value);
   localStorage.setItem("taskItems", complementaryArray);
 };
+
+export const createTaskOnScreen = () => {
+  const ul = document.querySelector("ul");
+  const tasks = localStorage.getItem("taskItems");
+  tasks.forEach((item) => {
+    ul.insertAdjacentHTML(
+      "beforeend",
+      `
+      
+      `
+    );
+  });
+};

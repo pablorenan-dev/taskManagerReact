@@ -1,4 +1,35 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 ul {
-  background-color: red;
+  background-color: rgb(219, 219, 219);
   width: 500px;
+  display: flex;
+}
+
+li {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 16px;
+  background-color: rgb(163, 163, 163);
+  padding: 2% 5% 2% 5%;
+  margin: 2% 5% 2% 5%;
+  width: 100%;
+}
+
+li p {
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  white-space: normal;
+  width: 100%;
+  text-align: left;
+}
+
+li div {
+  display: flex;
 }
