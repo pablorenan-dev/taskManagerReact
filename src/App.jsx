@@ -5,8 +5,7 @@ import TaskList from "./components/TaskList/TaskList";
 function App() {
   return (
     <>
-      <TaskHeader></TaskHeader>
-      <TaskList></TaskList>
+      <TaskHeader />
     </>
   );
 }

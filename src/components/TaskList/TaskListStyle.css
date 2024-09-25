@@ -8,6 +8,7 @@ ul {
   background-color: rgb(219, 219, 219);
   width: 500px;
   display: flex;
+  flex-direction: column;
 }
 
 li {
@@ -18,7 +19,7 @@ li {
   border-radius: 16px;
   background-color: rgb(163, 163, 163);
   padding: 2% 5% 2% 5%;
-  margin: 2% 5% 2% 5%;
+  margin: 2% 0 2% 0;
   width: 100%;
 }
 

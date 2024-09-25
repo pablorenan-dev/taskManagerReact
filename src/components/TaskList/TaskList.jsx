@@ -1,15 +1,19 @@
 import "./TaskListStyle.css";
 
-const TaskList = () => {
+const TaskList = ({ list }) => {
   return (
     <ul>
-      <li>
-        <p>banana</p>
-        <div>
-          <button>✅</button>
-          <button>❌</button>
-        </div>
-      </li>
+      {list.map((item) => {
+        return (
+          <li>
+            <p>{item}</p>
+            <div>
+              <button>✅</button>
+              <button>❌</button>
+            </div>
+          </li>
+        );
+      })}
     </ul>
   );
 };

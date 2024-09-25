@@ -9,15 +9,15 @@ export const verifyIfValueExistsInLocalStorage = () => {
 
 export const saveToLocalStorageFirstTime = (value) => {
   const localStorageItems = [value];
-  localStorage.setItem("taskItems", localStorageItems);
+  localStorage.setItem("taskItems", JSON.stringify(localStorageItems));
+  return localStorageItems
 };
 
 export const saveToLocalStorage = (value) => {
-  const complementaryArray = [];
-  const localStorageItems = localStorage.getItem("taskItems");
-  complementaryArray.push(localStorageItems);
-  complementaryArray.push(value);
-  localStorage.setItem("taskItems", complementaryArray);
+  const localStorageItems = JSON.parse(localStorage.getItem("taskItems"));
+  localStorageItems.push(value);
+  localStorage.setItem("taskItems", JSON.stringify(localStorageItems));
+  return localStorageItems
 };
 
 export const createTaskOnScreen = () => {
