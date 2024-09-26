@@ -20,15 +20,3 @@ export const saveToLocalStorage = (value) => {
   return localStorageItems
 };
 
-export const createTaskOnScreen = () => {
-  const ul = document.querySelector("ul");
-  const tasks = localStorage.getItem("taskItems");
-  tasks.forEach((item) => {
-    ul.insertAdjacentHTML(
-      "beforeend",
-      `
-      
-      `
-    );
-  });
-};
