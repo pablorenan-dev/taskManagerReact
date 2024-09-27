@@ -14,7 +14,6 @@ const TaskHeader = () => {
     if (event.key !== "Enter") {
       return;
     }
-
     const isThereItemInLocalStorage = verifyIfValueExistsInLocalStorage();
     if (isThereItemInLocalStorage) {
       const res = saveToLocalStorageFirstTime(taskValue);
@@ -28,6 +27,10 @@ const TaskHeader = () => {
     }
     setTaskValue("");
   };
+  const clearItemsLocalStorage = () => {
+    localStorage.clear();
+    setList([]);
+  };
   useEffect(() => {
     console.log();
     const res = JSON.parse(localStorage.getItem("taskItems"));
@@ -35,6 +38,7 @@ const TaskHeader = () => {
       setList(res);
     }
   }, []);
+
   return (
     <>
       <div>
@@ -47,7 +51,13 @@ const TaskHeader = () => {
           }}
           value={taskValue}
         />
-        <button>Clear All</button>
+        <button
+          onClick={() => {
+            clearItemsLocalStorage();
+          }}
+        >
+          Clear All
+        </button>
       </div>
       <TaskList list={list} />
     </>
